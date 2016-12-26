@@ -1,0 +1,10 @@
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+@import "../www/lib/ionic/scss";
+.profile-image {
+	img {
+		border-radius: 50%;
+		margin: 10px;
+		border: 1px solid #DD4242;
+	}
+	
+}
