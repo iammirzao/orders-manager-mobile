@@ -1,4 +1,4 @@
-<ion-view title="Customers" id="page5">
+<ion-view title="Customers" id="customers">
   <ion-nav-buttons side="right" class="has-header">
     <button class="button button-icon icon ion-android-add"></button>
   </ion-nav-buttons>
@@ -11,12 +11,10 @@
     </ion-list>
     <div class="spacer" style="height: 20px;"></div>
     <ion-list id="customers-list8">
-      <ion-item class="item-icon-right" id="customers-list-item19" ui-sref="dresBa.customerInfo()">Izet Copelj
+      <ion-item class="item-icon-right" id="customers-list-item19" ui-sref="ordersManager.customerInfo()"
+          ng-repeat="c in customers">{{c.name}}
         <i class="icon ion-android-star-outline"></i>
         <ion-option-button class="button-assertive">Delete</ion-option-button>
-      </ion-item>
-      <ion-item class="item-icon-right" id="customers-list-item20" ui-sref="dresBa.customerInfo()">Haris Spahic
-        <i class="icon ion-android-star-outline"></i>
       </ion-item>
     </ion-list>
   </ion-content>

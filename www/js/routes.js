@@ -7,103 +7,117 @@ angular.module('app.routes', [])
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
   $stateProvider
-    
 
-      .state('dresBa', {
-    url: '/side-menu21',
-    templateUrl: 'templates/dresBa.html',
-    controller: 'dresBaCtrl'
+
+      .state('ordersManager', {
+    url: '/ordersManager',
+    templateUrl: 'templates/main/ordersManager.html',
+    controller: 'ordersManagerCtrl'
   })
 
-  .state('login', {
-    url: '/page1',
-    templateUrl: 'templates/login.html',
-    controller: 'loginCtrl'
-  })
-
-  .state('signUp', {
-    url: '/page8',
-    templateUrl: 'templates/signUp.html',
-    controller: 'signUpCtrl'
-  })
-
-  .state('dresBa.customers', {
-    url: '/page5',
+  .state('ordersManager.login', {
+    url: '/login',
     views: {
-      'side-menu21': {
-        templateUrl: 'templates/customers.html',
+      'ordersManager': {
+        templateUrl: 'templates/start/login.html',
+        controller: 'loginCtrl'
+      }
+    }
+  })
+
+  .state('ordersManager.signUp', {
+    url: '/signup',
+    views: {
+      'ordersManager': {
+        templateUrl: 'templates/start/signUp.html',
+        controller: 'signUpCtrl'
+      }
+    }
+  })
+
+  .state('ordersManager.customers', {
+    url: '/customers',
+    views: {
+      'ordersManager': {
+        templateUrl: 'templates/customers/customers.html',
         controller: 'customersCtrl'
       }
     }
   })
 
-  .state('addNewCustomer', {
-    url: '/page10',
-    templateUrl: 'templates/addNewCustomer.html',
-    controller: 'addNewCustomerCtrl'
-  })
-
-  .state('dresBa.customerInfo', {
-    url: '/page9',
+  .state('ordersManager.orders', {
+    url: '/orders',
     views: {
-      'side-menu21': {
-        templateUrl: 'templates/customerInfo.html',
-        controller: 'customerInfoCtrl'
-      }
-    }
-  })
-
-  .state('dresBa.editCustomer', {
-    url: '/page13',
-    views: {
-      'side-menu21': {
-        templateUrl: 'templates/editCustomer.html',
-        controller: 'editCustomerCtrl'
-      }
-    }
-  })
-
-  .state('dresBa.orders', {
-    url: '/page6',
-    views: {
-      'side-menu21': {
-        templateUrl: 'templates/orders.html',
+      'ordersManager': {
+        templateUrl: 'templates/orders/orders.html',
         controller: 'ordersCtrl'
       }
     }
   })
 
-  .state('dresBa.orderInfo', {
-    url: '/page11',
+  .state('addNewCustomer', {
+    url: '/addnewcustomer',
+    templateUrl: 'templates/customers/addNewCustomer.html',
+    controller: 'addNewCustomerCtrl'
+  })
+
+  .state('addNewOrder', {
+    url: '/addneworder',
+    templateUrl: 'templates/orders/addNewOrder.html',
+    controller: 'addNewOrderCtrl'
+  })
+
+  .state('ordersManager.customerInfo', {
+    url: '/customerinfo',
     views: {
-      'side-menu21': {
-        templateUrl: 'templates/orderInfo.html',
+      'ordersManager': {
+        templateUrl: 'templates/customers/customerInfo.html',
+        controller: 'customerInfoCtrl'
+      }
+    }
+  })
+
+  .state('ordersManager.orderInfo', {
+    url: '/orderinfo',
+    views: {
+      'ordersManager': {
+        templateUrl: 'templates/orders/orderInfo.html',
         controller: 'orderInfoCtrl'
       }
     }
   })
 
-  .state('dresBa.editOrder', {
-    url: '/page12',
+  .state('ordersManager.editCustomer', {
+    url: '/editcustomer',
     views: {
-      'side-menu21': {
-        templateUrl: 'templates/editOrder.html',
+      'ordersManager': {
+        templateUrl: 'templates/customers/editCustomer.html',
+        controller: 'editCustomerCtrl'
+      }
+    }
+  })
+
+  .state('ordersManager.editOrder', {
+    url: '/editorder',
+    views: {
+      'ordersManager': {
+        templateUrl: 'templates/orders/editOrder.html',
         controller: 'editOrderCtrl'
       }
     }
   })
 
-  .state('dresBa.myProfile', {
-    url: '/page7',
+  .state('ordersManager.editProfile', {
+    url: '/editprofile',
     views: {
-      'side-menu21': {
-        templateUrl: 'templates/myProfile.html',
-        controller: 'myProfileCtrl'
+      'ordersManager': {
+        templateUrl: 'templates/editProfile.html',
+        controller: 'editProfileCtrl'
       }
     }
   })
 
-$urlRouterProvider.otherwise('/page1')
+$urlRouterProvider.otherwise('/ordersManager/login')
 
 
 });

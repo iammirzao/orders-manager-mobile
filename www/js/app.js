@@ -3,9 +3,14 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-// 'starter.services' is found in services.js
-// 'starter.controllers' is found in controllers.js
-angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives','app.services',])
+// 'starter.services' is found in services folder
+// 'starter.controllers' is found in controllers foler
+
+angular.module('app', ['ionic', 'app.login', 'app.signup',
+                       'app.customers', 'app.addnewcustomer', 'app.customerinfo', 'app.editcustomer',
+                       'app.orders', 'app.addneworder', 'app.orderinfo', 'app.editorder',
+                       'app.editprofile', 'app.ordersmanager',
+                       'app.routes', 'app.directives','app.services'])
 
 .config(function($ionicConfigProvider, $sceDelegateProvider){
 
@@ -13,7 +18,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives
 
 })
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $rootScope) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -25,6 +30,9 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+    $rootScope.logout = function () {
+      console.log("Logging out from the app");
+    }
   });
 })
 
@@ -34,7 +42,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives
 */
 .directive('disableSideMenuDrag', ['$ionicSideMenuDelegate', '$rootScope', function($ionicSideMenuDelegate, $rootScope) {
     return {
-        restrict: "A",  
+        restrict: "A",
         controller: ['$scope', '$element', '$attrs', function ($scope, $element, $attrs) {
 
             function stopDrag(){
@@ -69,7 +77,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives
       attrs.$observe('hrefInappbrowser', function(val){
         href = val;
       });
-      
+
       element.bind('click', function (event) {
 
         window.open(href, '_system', 'location=yes');

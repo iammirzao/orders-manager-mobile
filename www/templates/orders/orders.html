@@ -1,4 +1,4 @@
-<ion-view title="Orders" id="page6">
+<ion-view title="Orders" id="orders">
   <ion-nav-buttons side="right" class="has-header">
     <button class="button button-icon icon ion-android-add"></button>
   </ion-nav-buttons>
@@ -11,9 +11,9 @@
     </ion-list>
     <div class="spacer" style="width: 300px; height: 20px;"></div>
     <ion-list id="orders-list7">
-      <ion-item id="orders-list-item22" ui-sref="dresBa.orderInfo()">Narudzba 1</ion-item>
-      <ion-item id="orders-list-item23" ui-sref="dresBa.orderInfo()">Narudzba 2</ion-item>
-      <ion-item id="orders-list-item24" ui-sref="dresBa.orderInfo()">Narudzba 3</ion-item>
+      <ion-item id="orders-list-item22" ui-sref="ordersManager.orderInfo()" ng-repeat="o in orders">{{o.name}}
+        <ion-option-button class="button-assertive">Delete</ion-option-button>
+      </ion-item>
     </ion-list>
   </ion-content>
 </ion-view>

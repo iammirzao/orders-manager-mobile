@@ -1,0 +1,13 @@
+<ion-view title="Customer info" id="customerinfo">
+  <ion-content padding="true" class="has-header">
+    <ion-list id="customerInfo-list11">
+      <ion-item id="customerInfo-list-item44" ui-sref="ordersManager.editCustomer()">Customer full info</ion-item>
+    </ion-list>
+    <div class="spacer" style="height: 20px;"></div>
+    <ion-list id="customerInfo-list13">
+      <ion-item id="orders-list-item22" ui-sref="ordersManager.orderInfo()" ng-repeat="o in orders">{{o.name}}
+        <ion-option-button class="button-assertive">Delete</ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
