@@ -1,16 +1,22 @@
 angular.module('app.login', [])
 
-.controller('loginCtrl', ['$scope', '$state', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+.controller('loginCtrl', ['$scope', '$ionicModal', '$state', '$firebaseAuth', '$firebase', '$ionicLoading', '$rootScope', 'UserService',// The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $state) {
+function ($scope, $ionicModal, $state, $firebaseAuth, $firebase, $ionicLoading, $rootScope, UserService) {
 
-  $scope.signIn = function () {
-      $state.go('ordersManager.editProfile');
+  console.log('Login Controller Initialized');
+
+  $rootScope.isLoggedIn = false;
+
+//  UserService.signUp($scope.user);
+
+  $scope.signUp = function (user){
+    UserService.signUp(user);
   }
 
-  $scope.signUp = function () {
-        $state.go('ordersManager.signUp');
-    }
+  $scope.signIn = function (user){
+    UserService.signIn(user);
+  }
 
 }])
