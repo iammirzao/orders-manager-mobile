@@ -2,13 +2,13 @@
   <ion-content padding="true" class="has-header">
     <form id="editOrder-form11" class="list">
       <label class="item item-input" id="editOrder-input22">
-        <input type="text" placeholder="Edit products info">
+        <input type="text" placeholder="Edit products info" ng-model="order.info">
       </label>
       <label class="item item-input" id="editOrder-input18">
-        <input type="text" placeholder="Edit tracking number">
+        <input type="text" placeholder="Edit tracking number" ng-model="order.number">
       </label>
     </form>
-    <button id="editOrder-button8" class="button button-stable button-block">Save changes</button>
+    <button id="editOrder-button8" class="button button-stable button-block" ng-click="saveOrder(order);">Save changes</button>
     <button id="editOrder-button11" class="button button-assertive button-block">Delete order</button>
   </ion-content>
 </ion-view>

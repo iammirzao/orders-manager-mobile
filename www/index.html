@@ -47,10 +47,11 @@
       }
     </style>
 
+
+    <!-- Controllers -->
     <script src="js/app.js"></script>
     <script src="js/controllers/main/OrdersManagerCtrl.js"></script>
     <script src="js/controllers/start/LoginCtrl.js"></script>
-    <script src="js/controllers/start/SignUpCtrl.js"></script>
     <script src="js/controllers/customers/CustomersCtrl.js"></script>
     <script src="js/controllers/customers/AddNewCustomerCtrl.js"></script>
     <script src="js/controllers/customers/CustomerInfoCtrl.js"></script>
@@ -61,11 +62,37 @@
     <script src="js/controllers/orders/EditOrderCtrl.js"></script>
     <script src="js/controllers/myprofile/EditProfileCtrl.js"></script>
 
-    <script src="js/routes.js"></script>
-    <script src="js/directives/directives.js"></script>
+    <!-- Services -->
     <script src="js/services/services.js"></script>
+    <script src="js/services/auth/Auth.js"></script>
+    <script src="js/services/user/UserService.js"></script>
+    <script src="js/services/orderscustomers/OrdersAndCustomersService.js"></script>
+
+    <!-- Directives -->
+    <script src="js/directives/directives.js"></script>
+
+    <!-- Routes -->
+    <script src="js/routes.js"></script>
 
 
+    <!-- Firebase -->
+    <!--<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>-->
+    <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBi-PeqY4OM59yE0zt_1_J3zAhp4sGUkDI",
+        authDomain: "orders-manager-be196.firebaseapp.com",
+        databaseURL: "https://orders-manager-be196.firebaseio.com",
+        projectId: "orders-manager-be196",
+        storageBucket: "orders-manager-be196.appspot.com",
+        messagingSenderId: "638863328521"
+      };
+      firebase.initializeApp(config);
+    </script>
+
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
     <!-- Only required for Tab projects w/ pages in multiple tabs
     <script src="lib/ionicuirouter/ionicUIRouter.js"></script>
     -->

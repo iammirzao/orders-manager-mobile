@@ -1,19 +1,19 @@
 <ion-view title="Edit profile" id="editprofile">
   <ion-content padding="true" class="has-header">
     <div class="profile-image">
-      <img src="img/db7UI02sTnm9NtltKNXu_11751783_1630647707175383_1091615965367722951_n.jpg" style="display: block; width: 50%; height: auto; margin-left: auto; margin-right: auto;">
+      <img src="img/db7UI02sTnm9NtltKNXu_11751783_1630647707175383_1091615965367722951_n.jpg">
     </div>
-    <form id="editProfile-form7" class="list">
+    <form id="editProfile-form7" class="list p-t20">
       <label class="item item-input" id="editProfile-input10">
-        <input type="text" placeholder="Change full name">
+        <input type="text" placeholder="Change display name" ng-model="user.displayName">
       </label>
       <label class="item item-input" id="editProfile-input11">
-        <input type="text" placeholder="Change username">
+        <input type="text" placeholder="Change email" ng-model="user.email">
       </label>
-      <label class="item item-input" id="editProfile-input12">
-        <input type="password" placeholder="Change password">
-      </label>
+      <!--<label class="item item-input" id="editProfile-input12">-->
+        <!--<input type="password" placeholder="Change password">-->
+      <!--</label>-->
     </form>
-    <button id="editProfile-button5" class="button button-stable button-block">Save changes</button>
+    <button id="editProfile-button5" class="button button-stable button-block" ng-click="updateUser(user);">Save changes</button>
   </ion-content>
 </ion-view>

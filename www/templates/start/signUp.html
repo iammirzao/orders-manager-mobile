@@ -7,17 +7,14 @@
           <input type="text" placeholder="Enter your full name">
         </label>
         <label class="item item-input" id="signUp-input9">
-          <input type="text" placeholder="Enter your e-mail">
-        </label>
-        <label class="item item-input" id="signUp-input8">
-          <input type="text" placeholder="Enter your username">
+          <input type="text" placeholder="Enter your e-mail" ng-model="user.email">
         </label>
         <label class="item item-input" id="signUp-input6">
-          <input type="password" placeholder="Enter your password">
+          <input type="password" placeholder="Enter your password" ng-model="user.password">
         </label>
       </ion-list>
       <div class="spacer" style="height: 40px;"></div>
-      <a ui-sref="ordersManager.login()" id="signUp-button3" class="button button-stable button-block">Sign up</a>
+      <a ng-click="signUp(user)" id="signUp-button3" class="button button-stable button-block">Sign up</a>
     </form>
   </ion-content>
 </ion-view>

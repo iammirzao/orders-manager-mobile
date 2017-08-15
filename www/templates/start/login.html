@@ -1,18 +1,18 @@
-<ion-view title="Login" id="page4">
+<ion-view hide-back-button="true" title="Login" id="page4">
   <ion-content padding="true" class="has-header">
     <form id="login-form4" class="list">
       <div class="spacer" style="height: 40px;"></div>
       <ion-list id="login-list3">
         <label class="item item-input" id="login-input3">
-          <input type="text" placeholder="username">
+          <input type="text" placeholder="email" ng-model="user.email">
         </label>
         <label class="item item-input" id="login-input4">
-          <input type="password" placeholder="password">
+          <input type="password" placeholder="password" ng-model="user.password">
         </label>
       </ion-list>
       <div class="spacer" style="height: 40px;"></div>
-      <a ng-click="signIn();" id="login-button1" class="button button-stable button-block">Log in</a>
-      <a ng-click="signUp();" id="login-button2" class="button button-positive button-block button-clear">Or create an account</a>
+      <a ng-click="signIn(user);" id="login-button1" class="button button-stable button-block">Log in</a>
+      <a ui-sref="ordersManager.signUp" id="login-button2" class="button button-positive button-block button-clear">Or create an account</a>
     </form>
   </ion-content>
 </ion-view>
