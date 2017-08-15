@@ -6,11 +6,12 @@
 // 'starter.services' is found in services folder
 // 'starter.controllers' is found in controllers foler
 
-angular.module('app', ['ionic', 'app.login', 'app.signup',
+angular.module('app', ['ionic', 'app.login',
                        'app.customers', 'app.addnewcustomer', 'app.customerinfo', 'app.editcustomer',
                        'app.orders', 'app.addneworder', 'app.orderinfo', 'app.editorder',
                        'app.editprofile', 'app.ordersmanager',
-                       'app.routes', 'app.directives','app.services'])
+                       'app.services', 'app.auth', 'app.userservice', 'app.orderscustomers',
+                       'app.routes', 'app.directives', 'firebase'])
 
 .config(function($ionicConfigProvider, $sceDelegateProvider){
 
@@ -18,7 +19,7 @@ angular.module('app', ['ionic', 'app.login', 'app.signup',
 
 })
 
-.run(function($ionicPlatform, $rootScope) {
+.run(function($ionicPlatform, $rootScope, $state) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -32,6 +33,7 @@ angular.module('app', ['ionic', 'app.login', 'app.signup',
     }
     $rootScope.logout = function () {
       console.log("Logging out from the app");
+      $state.go('ordersManager.login');
     }
   });
 })
