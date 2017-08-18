@@ -1,7 +1,24 @@
 <ion-view title="Customer info" id="customerinfo">
   <ion-content padding="true" class="has-header">
     <ion-list id="customerInfo-list11">
-      <ion-item id="customerInfo-list-item44" ui-sref="ordersManager.editCustomer()">Customer full info</ion-item>
+      <ion-item id="customerInfo-list-item44" ui-sref="ordersManager.editCustomer()">
+        {{customerInfo.fullName}}
+      </ion-item>
+      <ion-item id="customerInfo-list-item44" ui-sref="ordersManager.editCustomer()">
+        {{customerInfo.address}}
+      </ion-item>
+      <ion-item id="customerInfo-list-item44" ui-sref="ordersManager.editCustomer()">
+        {{customerInfo.city}}
+      </ion-item>
+      <ion-item id="customerInfo-list-item44" ui-sref="ordersManager.editCustomer()">
+        {{customerInfo.zip}}
+      </ion-item>
+      <ion-item id="customerInfo-list-item44" ui-sref="ordersManager.editCustomer()">
+        {{customerInfo.country}}
+      </ion-item>
+      <ion-item id="customerInfo-list-item44" ui-sref="ordersManager.editCustomer()">
+        {{customerInfo.contactNo}}
+      </ion-item>
     </ion-list>
     <div class="spacer" style="height: 20px;"></div>
     <ion-list id="customerInfo-list13">
