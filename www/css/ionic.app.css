@@ -9801,5 +9801,28 @@ a.button {
 
 .profile-image img {
   border-radius: 50%;
-  margin: 10px;
-  border: 1px solid #DD4242; }
+  border: 1px solid #DD4242;
+  display: block;
+  width: 50%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.username{
+  color: #DD4242;
+  font-weight: 400;
+  text-align: center;
+}
+
+.profile-pic{
+  display: block;
+  width: 50%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.p-t20{
+  padding-top: 20px;
+}
