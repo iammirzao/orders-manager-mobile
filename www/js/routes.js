@@ -9,7 +9,7 @@ angular.module('app.routes', [])
   $stateProvider
 
 
-      .state('ordersManager', {
+  .state('ordersManager', {
     url: '/ordersManager',
     templateUrl: 'templates/main/ordersManager.html',
     controller: 'ordersManagerCtrl'
@@ -30,7 +30,7 @@ angular.module('app.routes', [])
     views: {
       'ordersManager': {
         templateUrl: 'templates/start/signUp.html',
-        controller: 'signUpCtrl'
+        controller: 'loginCtrl'
       }
     }
   })
@@ -55,16 +55,24 @@ angular.module('app.routes', [])
     }
   })
 
-  .state('addNewCustomer', {
+  .state('ordersManager.addNewCustomer', {
     url: '/addnewcustomer',
-    templateUrl: 'templates/customers/addNewCustomer.html',
-    controller: 'addNewCustomerCtrl'
+    views: {
+      'ordersManager': {
+        templateUrl: 'templates/customers/addNewCustomer.html',
+        controller: 'addNewCustomerCtrl'
+      }
+    }
   })
 
-  .state('addNewOrder', {
+  .state('ordersManager.addNewOrder', {
     url: '/addneworder',
-    templateUrl: 'templates/orders/addNewOrder.html',
-    controller: 'addNewOrderCtrl'
+    views: {
+      'ordersManager': {
+        templateUrl: 'templates/orders/addNewOrder.html',
+        controller: 'addNewOrderCtrl'
+      }
+    }
   })
 
   .state('ordersManager.customerInfo', {
