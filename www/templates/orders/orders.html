@@ -1,6 +1,6 @@
 <ion-view title="Orders" id="orders">
   <ion-nav-buttons side="right" class="has-header">
-    <button class="button button-icon icon ion-android-add"></button>
+    <button class="button button-icon icon ion-android-add" ui-sref="ordersManager.addNewOrder()"></button>
   </ion-nav-buttons>
   <ion-content padding="true" class="has-header">
     <ion-list id="orders-list5">
@@ -11,7 +11,7 @@
     </ion-list>
     <div class="spacer" style="width: 300px; height: 20px;"></div>
     <ion-list id="orders-list7">
-      <ion-item id="orders-list-item22" ui-sref="ordersManager.orderInfo()" ng-repeat="o in orders">{{o.name}}
+      <ion-item id="orders-list-item22" ui-sref="ordersManager.orderInfo()" ng-repeat="o in orders" ng-click="setOrderInfo(o);">{{o.customer}}: {{o.orderInfo}}
         <ion-option-button class="button-assertive">Delete</ion-option-button>
       </ion-item>
     </ion-list>

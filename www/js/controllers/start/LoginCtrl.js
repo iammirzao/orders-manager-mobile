@@ -7,10 +7,6 @@ function ($scope, $ionicModal, $state, $firebaseAuth, $firebase, $ionicLoading, 
 
   console.log('Login Controller Initialized');
 
-  $rootScope.isLoggedIn = false;
-
-//  UserService.signUp($scope.user);
-
   $scope.signUp = function (user){
     UserService.signUp(user);
   }
