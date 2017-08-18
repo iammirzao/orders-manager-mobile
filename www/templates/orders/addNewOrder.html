@@ -1,17 +1,17 @@
 <ion-view title="Add new order" id="addneworder">
   <ion-content padding="true" class="has-header">
     <form id="addNewOrder-form10" class="list">
-      <label class="item item-select" id="addNewOrder-select1">
-        <span class="input-label">Choose customer</span>
-        <select></select>
+      <label class="item item-input" id="orders-search2">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="search" placeholder="Search customer" ng-model="order.customer">
       </label>
       <label class="item item-input" id="addNewOrder-input13">
-        <input type="text" placeholder="Products info">
+        <input type="text" placeholder="Order info" ng-model="order.orderInfo">
       </label>
       <label class="item item-input" id="addNewOrder-input17">
-        <input type="text" placeholder="Add tracking number">
+        <input type="text" placeholder="Add tracking number" ng-model="order.trackingNo">
       </label>
     </form>
-    <button id="addNewOrder-button7" class="button button-stable button-block">Add order</button>
+    <button id="addNewOrder-button7" class="button button-stable button-block" ng-click="addOrder(order);">Add order</button>
   </ion-content>
 </ion-view>

@@ -2,18 +2,24 @@
   <ion-content padding="true" class="has-header">
     <form id="addNewCustomer-form9" class="list">
       <label class="item item-input" id="addNewCustomer-input15">
-        <input type="text" placeholder="Enter full name">
+        <input type="text" placeholder="Enter full name" ng-model="customer.fullName">
       </label>
       <label class="item item-input" id="addNewCustomer-input19">
-        <input type="text" placeholder="Enter address">
+        <input type="text" placeholder="Enter address" ng-model="customer.address">
       </label>
       <label class="item item-input" id="addNewCustomer-input20">
-        <input type="text" placeholder="Enter country and zip code">
+        <input type="text" placeholder="Enter city" ng-model="customer.city">
+      </label>
+      <label class="item item-input" id="addNewCustomer-input22">
+        <input type="text" placeholder="Enter zip code" ng-model="customer.zip">
+      </label>
+      <label class="item item-input" id="addNewCustomer-input23">
+        <input type="text" placeholder="Enter country" ng-model="customer.country">
       </label>
       <label class="item item-input" id="addNewCustomer-input21">
-        <input type="text" placeholder="Enter contact number">
+        <input type="text" placeholder="Enter contact number" ng-model="customer.contactNo">
       </label>
     </form>
-    <button id="addNewCustomer-button6" class="button button-stable button-block">Add customer</button>
+    <button id="addNewCustomer-button6" class="button button-stable button-block" ng-click="addCustomer(customer);">Add customer</button>
   </ion-content>
 </ion-view>
