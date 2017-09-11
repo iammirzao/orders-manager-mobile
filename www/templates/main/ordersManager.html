@@ -18,12 +18,10 @@
     <ion-content padding="false" style="top:0px !important;" class="side-menu-left">
       <div class="spacer" style="width: 268px; height: 33px;"></div>
       <div class="profile-image">
-        <a style="display:block;" ui-sref="ordersManager.editProfile()" menu-close="">
-          <img src="img/2mrwIVmiTZimzkaxEAj2_11751783_1630647707175383_1091615965367722951_n.jpg">
-        </a>
+        <ion-item class="item-icon-right assertive" id="ordersManager-list-item2" ui-sref="ordersManager.editProfile()" menu-close="">{{loggedUser.email}}
+          <ion-option-button class="button-positive"></ion-option-button>
+        </ion-item>
       </div>
-      <h4 ng-if="!user.displayName" class="heading-username username">{{user.email}}</h4>
-      <h4 ng-if="user.displayName" class="heading-username username">{{user.displayName}}</h4>
       <div class="spacer" style="width: 268px; height: 12px;"></div>
       <ion-list id="ordersManager-list1">
         <ion-item class="item-icon-right assertive" id="ordersManager-list-item2" ui-sref="ordersManager.orders()" menu-close="">Orders

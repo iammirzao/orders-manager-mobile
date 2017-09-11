@@ -7,6 +7,9 @@ function ($scope, $stateParams, UserService) {
 
   console.log('Orders Manager Controller Initialized');
 
+  $scope.loggedUser = UserService.getCurrentUser();
+  console.log($scope.loggedUser);
+
   $scope.logOut = function (){
     UserService.logOut();
   }
