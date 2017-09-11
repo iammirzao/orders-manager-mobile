@@ -60,18 +60,6 @@ function($state, $firebase, $rootScope){
       return user;
     },
 
-//    isLoggedIn: function(){
-//      firebase.auth().onAuthStateChanged(function(user) {
-//        if (user) {
-//          return user;
-//        }
-//        else {
-//          // No user is signed in.
-//          console.log("No user is signed in!");
-//        }
-//      });
-//    },
-
     updateUser: function (name, newemail) {
       var user = firebase.auth().currentUser;
       user.updateProfile({

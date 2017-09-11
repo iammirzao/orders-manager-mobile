@@ -31,10 +31,6 @@ angular.module('app', ['ionic', 'app.login',
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
-    $rootScope.logout = function () {
-      console.log("Logging out from the app");
-      $state.go('ordersManager.login');
-    }
   });
 })
 
