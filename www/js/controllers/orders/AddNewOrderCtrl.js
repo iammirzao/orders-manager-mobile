@@ -5,6 +5,14 @@ angular.module('app.addneworder', [])
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($scope, $stateParams, OrdersAndCustomersService) {
 
+  $scope.init = function () {
+    $scope.customers = [];
+    OrdersAndCustomersService.getCustomers()
+      .then(function(customers){
+        $scope.customers = customers;
+      });
+  };
+
   $scope.order = {
     customer: "",
     orderInfo: "",
@@ -14,5 +22,7 @@ function ($scope, $stateParams, OrdersAndCustomersService) {
   $scope.addOrder = function (order){
     OrdersAndCustomersService.addOrder(order);
   }
+
+  $scope.init();
 
 }])

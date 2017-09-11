@@ -1,14 +1,24 @@
 <ion-view title="Edit order" id="editorder">
   <ion-content padding="true" class="has-header">
     <form id="editOrder-form11" class="list">
+      <label class="item item-input" id="editOrder-input23">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="search" placeholder="Edit customer" ng-model="order.customer">
+      </label>
+      <ul class="list">
+        <label class="item item-input" ng-repeat="c in customers | filter: order.customer">{{o.customer}}</label>
+      </ul>
       <label class="item item-input" id="editOrder-input22">
-        <input type="text" placeholder="Edit products info" ng-model="order.info">
+        <input type="text" placeholder="Edit order info" ng-model="order.orderInfo">
+      </label>
+      <label class="item item-input" id="editOrder-input11">
+        <input type="text" placeholder="Edit order price" ng-model="order.orderPrice">
       </label>
       <label class="item item-input" id="editOrder-input18">
-        <input type="text" placeholder="Edit tracking number" ng-model="order.number">
+        <input type="text" placeholder="Edit tracking number" ng-model="order.trackingNo">
       </label>
     </form>
     <button id="editOrder-button8" class="button button-stable button-block" ng-click="saveOrder(order);">Save changes</button>
-    <button id="editOrder-button11" class="button button-assertive button-block">Delete order</button>
+    <button id="editOrder-button11" class="button button-assertive button-block" ng-click="deleteOrder(order);">Delete order</button>
   </ion-content>
 </ion-view>

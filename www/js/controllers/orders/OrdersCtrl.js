@@ -7,20 +7,19 @@ function ($scope, $stateParams, UserService, $state, OrdersAndCustomersService) 
 
   $scope.init = function () {
     $scope.orders = [];
-    var getOrders = firebase.database().ref('orders/');
-    getOrders.on('value', function(snapshot) {
-      var allOrders = snapshot.val();
-      _.forEach(allOrders, function(value) {
-        if(value.creator == UserService.getCurrentUser().uid){
-          $scope.orders.push(value);
-        }
+    OrdersAndCustomersService.getOrders()
+      .then(function(orders){
+        $scope.orders = orders;
       });
-      $state.reload();
-    });
   };
 
   $scope.setOrderInfo = function (order){
     OrdersAndCustomersService.setOrderInfo(order);
+  }
+
+  $scope.deleteOrder = function (order, index){
+    OrdersAndCustomersService.deleteOrder(order, index);
+    $scope.orders.splice(index, 1);
   }
 
   $scope.init();

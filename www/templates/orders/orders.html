@@ -6,13 +6,13 @@
     <ion-list id="orders-list5">
       <label class="item item-input" id="orders-search2">
         <i class="icon ion-search placeholder-icon"></i>
-        <input type="search" placeholder="Search for order">
+        <input type="search" placeholder="Search for order" ng-model="orderSearch">
       </label>
     </ion-list>
     <div class="spacer" style="width: 300px; height: 20px;"></div>
     <ion-list id="orders-list7">
-      <ion-item id="orders-list-item22" ui-sref="ordersManager.orderInfo()" ng-repeat="o in orders" ng-click="setOrderInfo(o);">{{o.customer}}: {{o.orderInfo}}
-        <ion-option-button class="button-assertive">Delete</ion-option-button>
+      <ion-item id="orders-list-item22" ui-sref="ordersManager.orderInfo()" ng-repeat="o in orders | filter: orderSearch" ng-click="setOrderInfo(o);">{{o.orderInfo}} ({{o.customer}})
+        <ion-option-button class="button-assertive" ng-click="deleteOrder(o, $index);">Delete</ion-option-button>
       </ion-item>
     </ion-list>
   </ion-content>

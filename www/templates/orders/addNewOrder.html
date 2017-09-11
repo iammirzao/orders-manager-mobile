@@ -5,8 +5,14 @@
         <i class="icon ion-search placeholder-icon"></i>
         <input type="search" placeholder="Search customer" ng-model="order.customer">
       </label>
+      <ul class="list">
+        <label class="item item-input" ng-repeat="c in customers | filter: order.customer">{{c.fullName}}</label>
+      </ul>
       <label class="item item-input" id="addNewOrder-input13">
         <input type="text" placeholder="Order info" ng-model="order.orderInfo">
+      </label>
+      <label class="item item-input" id="addNewOrder-input11">
+        <input type="text" placeholder="Order price in BAM" ng-model="order.orderPrice">
       </label>
       <label class="item item-input" id="addNewOrder-input17">
         <input type="text" placeholder="Add tracking number" ng-model="order.trackingNo">
