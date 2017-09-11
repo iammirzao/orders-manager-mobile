@@ -6,12 +6,12 @@
     <ion-list id="customers-list4">
       <label class="item item-input" id="customers-search1">
         <i class="icon ion-search placeholder-icon"></i>
-        <input type="search" placeholder="Search for customer">
+        <input type="search" placeholder="Search for customer" ng-model="customerSearch">
       </label>
     </ion-list>
     <div class="spacer" style="height: 20px;"></div>
     <ion-list id="customers-list8">
-      <ion-item class="item-icon-right" id="customers-list-item19" ui-sref="ordersManager.customerInfo()" ng-repeat="c in customers" ng-click="setCustomerInfo(c);">{{c.fullName}}
+      <ion-item class="item-icon-right" id="customers-list-item19" ui-sref="ordersManager.customerInfo()" ng-repeat="c in customers | filter: customerSearch" ng-click="setCustomerInfo(c);">{{c.fullName}}
         <i class="icon ion-android-star-outline"></i>
         <ion-option-button class="button-assertive" ng-click="deleteCustomer();">Delete</ion-option-button>
       </ion-item>

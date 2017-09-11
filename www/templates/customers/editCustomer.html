@@ -2,18 +2,24 @@
   <ion-content padding="true" class="has-header">
     <form id="editCustomer-form12" class="list">
       <label class="item item-input" id="editCustomer-input23">
-        <input type="text" placeholder="Edit full name">
+        <input type="text" placeholder="Edit full name" ng-model="customer.fullName">
       </label>
       <label class="item item-input" id="editCustomer-input24">
-        <input type="text" placeholder="Edit address">
-      </label>
-      <label class="item item-input" id="editCustomer-input25">
-        <input type="text" placeholder="Edit country and zip code">
+        <input type="text" placeholder="Edit address" ng-model="customer.address">
       </label>
       <label class="item item-input" id="editCustomer-input26">
-        <input type="text" placeholder="Edit contact number">
+        <input type="text" placeholder="Edit city" ng-model="customer.city">
       </label>
-      <button id="editCustomer-button9" class="button button-stable button-block">Save changes</button>
+      <label class="item item-input" id="editCustomer-input27">
+        <input type="text" placeholder="Edit zip code" ng-model="customer.zip">
+      </label>
+      <label class="item item-input" id="editCustomer-input25">
+        <input type="text" placeholder="Edit country" ng-model="customer.country">
+      </label>
+      <label class="item item-input" id="editCustomer-input28">
+        <input type="text" placeholder="Edit contact number" ng-model="customer.contactNo">
+      </label>
+      <button id="editCustomer-button9" class="button button-stable button-block" ng-click="saveCustomer(customer);">Save changes</button>
       <button id="editCustomer-button10" class="button button-assertive button-block">Delete customer</button>
     </form>
   </ion-content>

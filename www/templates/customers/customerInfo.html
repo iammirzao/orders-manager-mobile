@@ -22,7 +22,7 @@
     </ion-list>
     <div class="spacer" style="height: 20px;"></div>
     <ion-list id="customerInfo-list13">
-      <ion-item id="orders-list-item22" ui-sref="ordersManager.orderInfo()" ng-repeat="o in orders">{{o.name}}
+      <ion-item id="orders-list-item22" ui-sref="ordersManager.orderInfo()" ng-repeat="o in customerOrders" ng-click="setOrderInfo(o);">{{o.orderInfo}}
         <ion-option-button class="button-assertive">Delete</ion-option-button>
       </ion-item>
     </ion-list>

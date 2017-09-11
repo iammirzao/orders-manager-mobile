@@ -6,12 +6,12 @@ angular.module('app.addnewcustomer', [])
 function ($scope, $stateParams, OrdersAndCustomersService) {
 
   $scope.customer = {
-    fullName: "Mirza",
-    address: "Samira Gradisica 5",
-    city: "Vogosca",
-    zip: 71320,
-    country: "BA",
-    contactNo: 38761318717
+    fullName: "",
+    address: "",
+    city: "",
+    zip: "",
+    country: "",
+    contactNo: ""
   };
 
   $scope.addCustomer = function (customer){

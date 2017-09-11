@@ -7,16 +7,10 @@ function ($scope, $stateParams, UserService, $state, OrdersAndCustomersService) 
 
   $scope.init = function () {
     $scope.customers = [];
-    var getCustomers = firebase.database().ref('customers/');
-    getCustomers.on('value', function(snapshot) {
-      var allCustomers = snapshot.val();
-      _.forEach(allCustomers, function(value) {
-        if(value.creator == UserService.getCurrentUser().uid){
-          $scope.customers.push(value);
-        }
+    OrdersAndCustomersService.getCustomers()
+      .then(function(customers){
+        $scope.customers = customers;
       });
-      $state.reload();
-    });
   };
 
   $scope.setCustomerInfo = function (customer){

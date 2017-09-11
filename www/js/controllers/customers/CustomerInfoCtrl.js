@@ -7,4 +7,13 @@ function ($scope, $stateParams, OrdersAndCustomersService) {
 
   $scope.customerInfo = OrdersAndCustomersService.getCustomerInfo();
 
+  OrdersAndCustomersService.getCustomerOrders($scope.customerInfo.id)
+    .then(function(orders){
+      $scope.customerOrders = orders;
+    });
+
+  $scope.setOrderInfo = function (order){
+    OrdersAndCustomersService.setOrderInfo(order);
+  }
+
 }])
